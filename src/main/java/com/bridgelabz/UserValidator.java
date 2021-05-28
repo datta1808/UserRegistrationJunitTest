@@ -8,4 +8,9 @@ public class  UserValidator {
         String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
         return (Pattern.matches(NAME_PATTERN, firstName));
     }
+
+    public boolean validateLastName(String lastName) {
+        String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
+        return (Pattern.matches(NAME_PATTERN, lastName));
+    }
 }

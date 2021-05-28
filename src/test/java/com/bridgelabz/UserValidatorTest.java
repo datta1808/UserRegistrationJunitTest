@@ -28,4 +28,26 @@ public class UserValidatorTest {
             boolean result = userValidator.validateFirstName("Da");
             Assert.assertFalse(result);
         }
+
+        @Test
+        public void givenLastName_WhenLastNameStartsWithCapitalLetter_ShouldReturn_True() {
+            UserValidator userValidator = new UserValidator();
+            boolean result = userValidator.validateLastName("Bagale");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenLastName_WhenLastNameNotStartsWithCapitalLetter_ShouldReturn_False() {
+            UserValidator userValidator = new UserValidator();
+            boolean result = userValidator.validateLastName("bagale");
+            Assert.assertFalse(result);
+        }
+
+
+        @Test
+        public void givenLastName_WhenLastNameNotHaveMinimumThreeLetter_ShouldReturn_False() {
+            UserValidator userValidator = new UserValidator();
+            boolean result = userValidator.validateLastName("ba");
+            Assert.assertFalse(result);
+        }
     }
