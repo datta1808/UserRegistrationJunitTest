@@ -74,5 +74,31 @@ public class UserValidatorTest {
             boolean result = userValidator.validateEmail("abc@gmail.comm");
             Assert.assertFalse(result);
         }
-    }
+
+
+        //TEST CASES FOR PHONE NUMBER
+        @Test
+        public void givenPhoneNumber_WhenPhoneNumberIsFollowedByCountryCode_True() {
+            boolean result = userValidator.validatePhone("91 9999988888");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenPhoneNumber_WhenPhoneNumberIsNotFollowedByCountryCode_ShouldReturn_False() {
+            boolean result = userValidator.validatePhone("8888899999");
+            Assert.assertFalse(result);
+        }
+
+        @Test
+        public void givenPhoneNumber_WhenPhoneNumberIsTenDigit_True() {
+            boolean result = userValidator.validatePhone("91 9604445258");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenPhoneNumber_WhenPhoneNumberIsNotTenDigit_ShouldReturn_False() {
+            boolean result = userValidator.validatePhone("91 8105215");
+            Assert.assertFalse(result);
+        }
+}
 
