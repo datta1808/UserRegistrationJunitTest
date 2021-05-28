@@ -13,4 +13,9 @@ public class  UserValidator {
         String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
         return (Pattern.matches(NAME_PATTERN, lastName));
     }
+
+    public boolean validateEmail(String email) {
+        String EMAIL = "^[a-z][a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z0-93]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        return (Pattern.matches(EMAIL, email));
+    }
 }

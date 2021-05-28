@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserValidatorTest {
-        //use case 1 test cases for first name
+
         UserValidator userValidator = new UserValidator();
 
         //when the name starts with a capital letter
@@ -29,25 +29,50 @@ public class UserValidatorTest {
             Assert.assertFalse(result);
         }
 
+
+        // TEST CASES FOR LAST NAME
         @Test
         public void givenLastName_WhenLastNameStartsWithCapitalLetter_ShouldReturn_True() {
-            UserValidator userValidator = new UserValidator();
             boolean result = userValidator.validateLastName("Bagale");
             Assert.assertTrue(result);
         }
 
         @Test
         public void givenLastName_WhenLastNameNotStartsWithCapitalLetter_ShouldReturn_False() {
-            UserValidator userValidator = new UserValidator();
             boolean result = userValidator.validateLastName("bagale");
             Assert.assertFalse(result);
         }
 
-
         @Test
         public void givenLastName_WhenLastNameNotHaveMinimumThreeLetter_ShouldReturn_False() {
-            UserValidator userValidator = new UserValidator();
             boolean result = userValidator.validateLastName("ba");
             Assert.assertFalse(result);
         }
+
+
+        // TEST CASES FOR EMAIL
+        @Test
+        public void givenEmail_WhenEmailStartsWithSmallLetter_ShouldReturn_True() {
+            boolean result = userValidator.validateEmail("bagaledatta18@gmail.com");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenEmail_WhenEmailNotStartsWithSmallLetter_ShouldReturn_False() {
+            boolean result = userValidator.validateEmail("Bagaledatta@gmail.com");
+            Assert.assertFalse(result);
+        }
+
+        @Test
+        public void givenEmail_WhenEmailEndsWithComOrIn_ShouldReturn_True() {
+            boolean result = userValidator.validateEmail("datta111@yahoo.com.in");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenEmail_WhenEmailNotEndsWithComOrIn_ShouldReturn_False() {
+            boolean result = userValidator.validateEmail("abc@gmail.comm");
+            Assert.assertFalse(result);
+        }
     }
+
