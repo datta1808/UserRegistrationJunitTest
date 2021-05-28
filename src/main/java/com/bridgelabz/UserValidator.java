@@ -1,7 +1,11 @@
 package com.bridgelabz;
 
-public class UserValidator {
-    public static void main(String[] args) {
-        System.out.println("Welcome to User Registration System");
+import java.util.regex.Pattern;
+
+public class  UserValidator {
+
+    public boolean validateFirstName(String firstName) {
+        String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
+        return (Pattern.matches(NAME_PATTERN, firstName));
     }
 }
