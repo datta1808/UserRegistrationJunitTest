@@ -116,5 +116,17 @@ public class UserValidatorTest {
             Assert.assertFalse(result);
         }
 
+        // Password must have atleast 1 uppercase letter
+        @Test
+        public void givenPassword_WhenPasswordHaveAtLeastOneUppercaseLetter_ShouldReturn_True() {
+            boolean result = userValidator.validatePassword("Datta$0987");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenPassword_WhenPasswordNotHaveAtLeastOneUppercaseLetter_ShouldReturn_False() {
+            boolean result = userValidator.validatePassword("datta$0987@");
+            Assert.assertFalse(result);
+        }
 }
 
