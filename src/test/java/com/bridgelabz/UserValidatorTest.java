@@ -141,5 +141,18 @@ public class UserValidatorTest {
             boolean result = userValidator.validatePassword("bagale@");
             Assert.assertFalse(result);
         }
+
+        // Password must contain at least 1 special character
+        @Test
+        public void givenPassword_WhenPasswordHaveAtLeastOneSpecialCharacter_ShouldReturn_True() {
+            boolean result = userValidator.validatePassword("Datta1234$");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenPassword_WhenPasswordNotHaveAtLeastOneSpecialCharacter_ShouldReturn_False() {
+            boolean result = userValidator.validatePassword("Datta1234");
+            Assert.assertFalse(result);
+        }
 }
 
