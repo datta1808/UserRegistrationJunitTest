@@ -23,4 +23,9 @@ public class  UserValidator {
         String PHONE_NUMBER = "^[9][1][ ][1-9][0-9]{9}$";
         return (Pattern.matches(PHONE_NUMBER, phone));
     }
+
+    public boolean validatePassword(String password) {
+        String PASSWORD_PATTERN = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%!]).{8,}";
+        return (Pattern.matches(PASSWORD_PATTERN, password));
+    }
 }

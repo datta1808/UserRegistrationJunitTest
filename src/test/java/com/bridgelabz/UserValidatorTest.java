@@ -91,14 +91,30 @@ public class UserValidatorTest {
 
         @Test
         public void givenPhoneNumber_WhenPhoneNumberIsTenDigit_True() {
-            boolean result = userValidator.validatePhone("91 9604445258");
+            boolean result = userValidator.validatePhone("91 8888899999");
             Assert.assertTrue(result);
         }
 
         @Test
         public void givenPhoneNumber_WhenPhoneNumberIsNotTenDigit_ShouldReturn_False() {
-            boolean result = userValidator.validatePhone("91 8105215");
+            boolean result = userValidator.validatePhone("91 7777777");
             Assert.assertFalse(result);
         }
+
+        // PASSWORD VALIDATION
+
+        // Password must contain minimum 8 characters
+        @Test
+        public void givenPassword_WhenPasswordIsMinimumEightDigit_ShouldReturn_True() {
+            boolean result = userValidator.validatePassword("Bagale$9718");
+            Assert.assertTrue(result);
+        }
+
+        @Test
+        public void givenPassword_WhenPasswordIsNotMinimumEightDigit_ShouldReturn_False() {
+            boolean result = userValidator.validatePassword("datta");
+            Assert.assertFalse(result);
+        }
+
 }
 
