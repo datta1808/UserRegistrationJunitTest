@@ -1,31 +1,54 @@
 package com.bridgelabz;
 
-import java.util.regex.Pattern;
-
-public class  UserValidator {
+public class UserValidator {
 
     public boolean validateFirstName(String firstName) {
-        String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
-        return (Pattern.matches(NAME_PATTERN, firstName));
+        boolean validation = firstName.matches("^[A-Z][a-z]{2,}$");
+        if(validation) {
+            System.out.println("First Name is Valid");
+        } else {
+            System.out.println("Invalid. \n Enter a valid name");
+        }
+        return validation;
     }
 
-    public boolean validateLastName(String lastName) {
-        String NAME_PATTERN = "^[A-Z][a-z]{2,}$";
-        return (Pattern.matches(NAME_PATTERN, lastName));
+    public boolean validateLastName (String lastName){
+        boolean validation = lastName.matches("^[A-Z][a-z]{2,}$");
+        if(validation) {
+            System.out.println("Last Name is Valid");
+        } else {
+            System.out.println("Invalid. \n Enter a valid Name");
+        }
+        return validation;
     }
 
-    public boolean validateEmail(String email) {
-        String EMAIL = "^[a-z][a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z0-93]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
-        return (Pattern.matches(EMAIL, email));
+    public boolean validateEmail (String email){
+        boolean validation = email.matches("^[a-z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z0-93]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$");
+        if(validation) {
+            System.out.println("Email is Valid");
+        } else {
+            System.out.println("Invalid. \n Enter a valid Email");
+        }
+        return validation;
     }
 
-    public boolean validatePhone(String phone) {
-        String PHONE_NUMBER = "^[9][1][ ][1-9][0-9]{9}$";
-        return (Pattern.matches(PHONE_NUMBER, phone));
+    public boolean validatePhone (String mobile){
+        boolean validation = mobile.matches("^[9][1][ ][0-9]{10}$");
+        if(validation) {
+            System.out.println("Mobile number is Valid");
+        } else {
+            System.out.println("Invalid. \n Enter a valid mobile number");
+        }
+        return validation;
     }
 
-    public boolean validatePassword(String password) {
-        String PASSWORD_PATTERN = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%!]).{8,}";
-        return (Pattern.matches(PASSWORD_PATTERN, password));
+    public boolean validatePassword (String password){
+        boolean validation = password.matches("(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%!]).{8,}");
+        if(validation) {
+            System.out.println("Password is Valid");
+        } else {
+            System.out.println("Invalid. \n Enter a valid Password");
+        }
+        return validation;
     }
 }
