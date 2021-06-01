@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.UserRegistrationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-05-30T21:18:45" hostname="LAPTOP-OKMRMTOT" time="0.016">
+<testsuite name="com.bridgelabz.UserRegistrationTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2021-06-01T14:19:41" hostname="LAPTOP-OKMRMTOT" time="0.019">
   <properties/>
-  <testcase name="givenPassword_Valid_shouldReturnValid" classname="com.bridgelabz.UserRegistrationTest" time="0.005"/>
-  <testcase name="givenLastName_Invalid_shouldReturnInvalid" classname="com.bridgelabz.UserRegistrationTest" time="0.002"/>
-  <testcase name="givenFirstName_valid_should_Return_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenPassword_Invalid_shouldReturnInvalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenEmail_Invalid_shouldReturnInvalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenMobileNumber_Valid_shouldReturnValid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenMobileNumber_Invalid_shouldReturnInvalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenFirstName_Invalid_shouldReturnInvalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
-  <testcase name="givenEmail_Valid_shouldReturnValid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenLastName_Valid_shouldReturnValid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenLastName_whenLength_lessThan3_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.004"/>
+  <testcase name="givenPhoneNumber_WhenPhoneNumberIsNotFollowedByCountryCode_ShouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmail_whenValid_shouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenFirstName_whenLength_lessThan3_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmail_WhenEmailEndsWithComOrIn_ShouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenEmail_WhenEmailNotEndsWithComOrIn_ShouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenLastName_whenContainsNumber_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPhoneNumber_WhenPhoneNumberIsFollowedByCountryCode_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenLastName_whenStartsWith_smallLetter_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenLastName_whenValid_shouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenPhoneNumber_WhenPhoneNumberIsFollowedByCountryCode_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenPassword_whenValid_shouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenFirstName_whenStartsWith_capitalLetter_shouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenFirstName_whenContainsNumber_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenFirstName_whenStartsWith_smallLetter_shouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPassword_WhenPasswordHaveAtLeastOneSpecialCharacter_ShouldReturn_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPhoneNumber_WhenPhoneNumberIsNotTenDigit_ShouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenPhoneNumber_WhenPhoneNumberIsTenDigit_Valid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenPassword_WhenPasswordHaveAtLeastOneSpecialCharacter_ShouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenEmail_WhenEmailNotStartsWithSmallLetter_ShouldReturn_Invalid" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
