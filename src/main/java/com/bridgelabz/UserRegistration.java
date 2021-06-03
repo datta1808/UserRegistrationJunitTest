@@ -3,24 +3,13 @@ package com.bridgelabz;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
 public class UserRegistration {
 
-    // INPUT Validation
-    public static boolean validateInput(String input, UserFieldPattern regex ) {
-        boolean result;
-        Pattern pattern = Pattern.compile(regex.pattern);
-        Matcher matcher = pattern.matcher(input);
-        result = matcher.find(); // true or false
-        return result;
-    }
-
     // First Name validation
-    public static String validateFirstName(String firstName) {
+    public static String validateFirstName(String firstName, ValidateInput validate) {
         String result;
         try {
-            if(validateInput(firstName, UserFieldPattern.REGEX_NAME)) {
+            if(validate.validateInput(firstName, UserFieldPattern.REGEX_NAME)) {
                 result = "valid";
             }
             else {
@@ -34,10 +23,10 @@ public class UserRegistration {
 
 
     // Last Name validation
-    public static String validateLastName(String lastName) {
+    public static String validateLastName(String lastName, ValidateInput validate) {
         String result;
         try {
-            if(validateInput(lastName, UserFieldPattern.REGEX_NAME)) {
+            if(validate.validateInput(lastName, UserFieldPattern.REGEX_NAME)) {
                 result = "valid";
             } else {
                 throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_LASTNAME, "Invalid User Details");
@@ -50,10 +39,10 @@ public class UserRegistration {
 
 
     // Email Validation
-    public static String validateEmail(String email) {
+    public static String validateEmail(String email, ValidateInput validate) {
         String result;
         try {
-            if(validateInput(email, UserFieldPattern.REGEX_EMAIL )) {
+            if(validate.validateInput(email, UserFieldPattern.REGEX_EMAIL )) {
                 result = "valid";
             } else {
                 throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_EMAIL, "Invalid User Details");
@@ -66,10 +55,10 @@ public class UserRegistration {
 
 
     // Mobile Number validation
-    public static String validateMobileNumber(String number) {
+    public static String validateMobileNumber(String number, ValidateInput validate) {
         String result;
         try {
-            if(validateInput(number, UserFieldPattern.REGEX_MOBILE_NUMBER)) {
+            if(validate.validateInput(number, UserFieldPattern.REGEX_MOBILE_NUMBER)) {
                 result = "valid";
             } else
             {
@@ -83,10 +72,10 @@ public class UserRegistration {
 
 
     // Password Validation
-    public static String validatePassword(String password) {
+    public static String validatePassword(String password, ValidateInput validate) {
         String result;
         try {
-            if(validateInput(password, UserFieldPattern.REGEX_PASSWORD)) {
+            if(validate.validateInput(password, UserFieldPattern.REGEX_PASSWORD)) {
                 result = "valid";
             } else {
                 throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_PASSWORD, "Invalid User Details");
@@ -96,4 +85,14 @@ public class UserRegistration {
         }
         return result;
     }
+
+
+    // Validate Input
+    ValidateInput validate = (String input, UserFieldPattern regex) -> {
+        boolean result;
+        Pattern pattern = Pattern.compile(regex.pattern);
+        Matcher matcher = pattern.matcher(input);
+        result = matcher.find();
+        return result;
+    };
 }
